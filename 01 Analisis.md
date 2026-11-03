@@ -362,9 +362,6 @@ Existencia
 Última Actualización
 ```
 
-### (Hojas Inventario y Catálogos) 
-https://redporlaciberseguridad-my.sharepoint.com/:x:/g/personal/icmcastroe-ia_labmx_ai/IQA2dCXEYGFYT6iZ7cJMG5U6AZ3cgzeY9BTvlx4V_YezrY8?e=jzecKl 
-
 
 ## Ejemplo de Inventario Estandarizado
 
