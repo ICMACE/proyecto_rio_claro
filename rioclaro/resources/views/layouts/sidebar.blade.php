@@ -41,16 +41,6 @@
                 Facturas
             </a>
         </li>
-
-        <li class="nav-item">
-            <a href="#"
-               class="nav-link">
-                <span class="material-icons mr-2">
-                    smart_toy
-                </span>
-                Asistente IA
-            </a>
-        </li>
         <li class="nav-item">
 
             <a href="{{ route('auditoria.index') }}"
@@ -67,7 +57,31 @@
             </a>
 
         </li>
+        <li class="nav-item">
 
+            <a href="{{ route('movimientos.index') }}"
+            class="nav-link">
+
+                <span class="material-icons mr-2">
+
+                    swap_horiz
+
+                </span>
+
+                Movimientos
+
+            </a>
+
+        </li>
+        <li class="nav-item">
+            <a href="#"
+                class="nav-link">
+                <span class="material-icons mr-2">
+                    smart_toy
+                </span>
+                Asistente IA
+            </a>
+        </li>
     </ul>
 
 </div>

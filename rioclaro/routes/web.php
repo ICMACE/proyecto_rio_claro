@@ -7,6 +7,7 @@ use App\Http\Controllers\ProveedorController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\FacturaController;
 use App\Http\Controllers\AuditoriaController;
+use App\Http\Controllers\MovimientoInventarioController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -30,6 +31,7 @@ Route::middleware('auth')->group(function () {
     });
     Route::prefix('productos')->group(function () {
         Route::resource('productos',ProductoController::class);
+        Route::get('/{producto}',[ProductoController::class, 'show'])->name('productos.show');
     });
     Route::prefix('facturas')->group(function () {
         Route::resource('facturas',FacturaController::class);
@@ -38,6 +40,10 @@ Route::middleware('auth')->group(function () {
     });
     Route::prefix('auditoria')->group(function () {
         Route::get('/',[AuditoriaController::class, 'index'])->name('auditoria.index');
+    });
+    Route::prefix('movimientos')->group(function () {
+        Route::resource('movimientos',MovimientoInventarioController::class);
+        
     });
 });
 

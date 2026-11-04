@@ -70,10 +70,20 @@ public function store(Request $request)
     /**
      * Display the specified resource.
      */
-    public function show(Producto $producto)
-    {
-        //
-    }
+public function show(
+    Producto $producto
+)
+{
+    $producto->load([
+        'proveedor',
+        'movimientos.usuario'
+    ]);
+
+    return view(
+        'productos.show',
+        compact('producto')
+    );
+}
 
     /**
      * Show the form for editing the specified resource.

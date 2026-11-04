@@ -46,6 +46,7 @@
                     <th>Stock</th>
 
                     <th>Proveedor</th>
+                    <th>Acciones</th>
 
                 </tr>
 
@@ -102,6 +103,18 @@
                             $producto->proveedor?->nombre
                         }}
 
+                    </td>
+                    <td>
+                        <a
+                        href="{{ route(
+                            'productos.show',
+                            $producto
+                        ) }}"
+                        class="btn btn-sm btn-info">
+
+                        Ver
+
+                        </a>
                     </td>
 
                 </tr>

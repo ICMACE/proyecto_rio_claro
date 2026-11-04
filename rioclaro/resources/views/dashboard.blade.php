@@ -141,5 +141,109 @@
     </div>
 
 </div>
+<div class="row mt-4">
+    <div class="col-md-12">
+        <div class="card card-dashboard mt-4">
 
+            <div class="card-header">
+
+                Movimientos Recientes
+
+            </div>
+
+            <div class="card-body">
+
+                <table class="table table-sm">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Fecha</th>
+
+                            <th>Producto</th>
+
+                            <th>Tipo</th>
+
+                            <th>Cantidad</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        @foreach($movimientos as $movimiento)
+
+                        <tr>
+
+                            <td>
+
+                                {{
+                                    $movimiento
+                                        ->created_at
+                                        ->format('d/m/Y H:i')
+                                }}
+
+                            </td>
+
+                            <td>
+
+                                {{
+                                    $movimiento
+                                        ->producto
+                                        ->nombre
+                                }}
+
+                            </td>
+
+                            <td>
+
+                                @if($movimiento->tipo == 'ENTRADA')
+
+                                    <span class="badge badge-success">
+
+                                        Entrada
+
+                                    </span>
+
+                                @elseif($movimiento->tipo == 'SALIDA')
+
+                                    <span class="badge badge-danger">
+
+                                        Salida
+
+                                    </span>
+
+                                @else
+
+                                    <span class="badge badge-warning">
+
+                                        Ajuste
+
+                                    </span>
+
+                                @endif
+
+                            </td>
+
+                            <td>
+
+                                {{ $movimiento->cantidad }}
+
+                            </td>
+
+                        </tr>
+
+                        @endforeach
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+    </div>
+</div>
 @endsection
