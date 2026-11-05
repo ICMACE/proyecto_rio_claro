@@ -8,6 +8,7 @@ use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\FacturaController;
 use App\Http\Controllers\AuditoriaController;
 use App\Http\Controllers\MovimientoInventarioController;
+use App\Http\Controllers\AgenteController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -44,6 +45,12 @@ Route::middleware('auth')->group(function () {
     Route::prefix('movimientos')->group(function () {
         Route::resource('movimientos',MovimientoInventarioController::class);
         
+    });
+    Route::prefix('agente')->group(function () {
+        Route::get('/',[AgenteController::class,'index'])->name('agente.index');
+        Route::post('/preguntar',[AgenteController::class,'preguntar'])->name('agente.preguntar'); 
+        Route::get('/voz',[AgenteController::class, 'voz'])->name('agente.voz');
+        Route::post('/api',[AgenteController::class, 'preguntarApi'])->name('agente.api');
     });
 });
 

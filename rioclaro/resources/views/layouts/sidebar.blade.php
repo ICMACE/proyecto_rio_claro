@@ -74,13 +74,32 @@
 
         </li>
         <li class="nav-item">
-            <a href="#"
-                class="nav-link">
+
+            <a href="{{ route('agente.index') }}"
+            class="nav-link">
+
                 <span class="material-icons mr-2">
                     smart_toy
                 </span>
+
                 Asistente IA
+
             </a>
+
+        </li>
+        <li class="nav-item">
+
+            <a href="{{ route('agente.voz') }}"
+            class="nav-link">
+
+                <span class="material-icons mr-2">
+                    keyboard_voice
+                </span>
+
+                Asistente Voz
+
+            </a>
+
         </li>
     </ul>
 
