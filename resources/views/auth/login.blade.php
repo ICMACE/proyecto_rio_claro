@@ -29,6 +29,7 @@
                             type="email"
                             name="email"
                             class="form-control"
+                            value="correo@mail.com"
                             required>
 
                     </div>
@@ -41,6 +42,7 @@
                             type="password"
                             name="password"
                             class="form-control"
+                            value="root1234"
                             required>
 
                     </div>

@@ -1,59 +1,127 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🌊 Proyecto Río Claro - Plataforma MVP de Gestión e Inteligencia Artificial
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Este repositorio contiene la documentación y código fuente del **Piloto de Modernización Operativa para Río Claro (Proyecto AI-901)**. El objetivo principal es centralizar la información dispersa de la empresa (inventarios, proveedores, facturas y políticas) e integrar capacidades de **Inteligencia Artificial en Microsoft Azure** para optimizar la toma de decisiones sin sustituir la supervisión humana.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 📌 Principio Operativo
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+```text
+LA IA APOYA ──► LA PERSONA DECIDE ──► LA EMPRESA ACTÚA
+```
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## 🛠️ Stack de Desarrollo
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+### **Backend & Frontend Web**
+* **Framework:** Laravel 12 (PHP)
+* **Frontend UI:** Bootstrap 4.6 & Material Icons
+* **Interfaz de Voz:** Web Speech API (`SpeechRecognition` & `SpeechSynthesis`)
+* **Base de Datos:** Azure Database for MySQL (Flexible Server)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### **Servicios de Inteligencia Artificial & Cloud (Microsoft Azure)**
+* **Hospedaje Web:** Azure App Service (Linux Environment)
+* **Procesamiento Documental (OCR/IA):** Azure AI Document Intelligence (Modelo *Prebuilt Invoice*)
+* **Motor de IA Generativa & LLM:** Azure OpenAI Service (Modelo `gpt-5-nano`)
+* **Indexación y Búsqueda Conversacional:** Azure AI Search
+* **Gestión de Agentes y Modelos:** Azure AI Foundry
 
-## Laravel Sponsors
+### **Repositorio y Documentación Empresarial**
+* **Repositorio Primario:** Microsoft SharePoint
+* **Formatos de Documentación:** Markdown (`.md`), Excel (`.xlsx`), PDF/Imágenes.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+---
 
-### Premium Partners
+## 🤖 ¿En qué secciones se utilizó Inteligencia Artificial?
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+La Inteligencia Artificial se integró estratégicamente en puntos donde aportaba el mayor valor operativo, reduciendo la carga manual de trabajo:
 
-## Contributing
+### 1. 🧾 Digitalización y Extracción de Datos de Facturas
+* **Servicio:** Azure AI Document Intelligence (*Prebuilt Invoice*)
+* **Uso:** Eliminación del registro manual de facturas enviadas en PDF o imágenes. Extrae automáticamente campos clave (*Proveedor, Folio, Fecha, Subtotal, IVA, Total*) para su revisión previa al guardado en base de datos.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 2. 💬 Asistente Conversacional Empresarial (Chat IA)
+* **Servicios:** Azure OpenAI (`gpt-5-nano`) + Azure AI Foundry + Azure AI Search
+* **Uso:** Clasificación de intenciones y ejecución de consultas en lenguaje natural (*RAG - Retrieval-Augmented Generation*). Permite al personal de ventas, bodega y administración consultar stock bajo, compras del mes, detalles de proveedores y políticas operativas.
 
-## Code of Conduct
+### 3. 🎙️ Consultas por Voz en Tiempo Real
+* **Servicios:** Web Speech API + Azure OpenAI (`gpt-5-nano`)
+* **Uso:** Interfaz manos libres que permite dictar preguntas desde dispositivos móviles o computadoras, procesar la intención con el LLM, consultar la base de datos y sintetizar la respuesta en voz.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 4. 📊 Normalización y Estandarización de Catálogos (Fase Preparatoria)
+* **Servicio:** Microsoft Copilot para Excel
+* **Uso:** Agrupación y limpieza de productos duplicados o mal nombrados entre sucursales para consolidar el **Inventario Maestro** y el **Catálogo Centralizado de Proveedores**.
 
-## Security Vulnerabilities
+---
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## 📊 Arquitectura del Sistema (TO-BE)
 
-## License
+```text
+               ┌──────────────────────────────────────────────┐
+               │         PROVEEDORES (Facturas PDF/JPG)      │
+               └──────────────────────┬───────────────────────┘
+                                      │
+                                      ▼
+                      Azure AI Document Intelligence
+                                      │
+                                      ▼
+┌───────────────────────────────────────────────────────────────────────────┐
+│                           APLICACIÓN WEB LARAVEL                          │
+│                            (Azure App Service)                            │
+│                                                                           │
+│  ┌─────────────────────────┐               ┌──────────────────────────┐  │
+│  │   Azure Database MySQL  │               │   Azure OpenAI Service   │  │
+│  │ (Inventario/Proveedores)│               │  (Clasificación e Intent)│  │
+│  └────────────┬────────────┘               └────────────┬─────────────┘  │
+└───────────────┼─────────────────────────────────────────┼─────────────────┘
+                │                                         │
+                ▼                                         ▼
+   ┌─────────────────────────────────────────────────────────────────────┐
+   │                        AZURE AI FOUNDRY / SEARCH                    │
+   │               (Base de Conocimiento: FAQ, Políticas, Inventario)    │
+   └──────────────────────────────────┬──────────────────────────────────┘
+                                      │
+                                      ▼
+                    ┌──────────────────────────────────┐
+                    │      AGENTE INTELIGENTE RÍO CLARO│
+                    │      (Interfaz Texto y Voz)      │
+                    └─────────────────┬────────────────┘
+                                      │
+            ┌─────────────────────────┼─────────────────────────┐
+            ▼                         ▼                         ▼
+         Bodega                    Ventas                 Administración
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
+
+## 📂 Estructura del Repositorio Documental
+
+```text
+RioClaro-AI901/
+├── 01 Analisis.md                      # Análisis operativo AS-IS, problemas y plan de IA
+├── 02 MVP.md                           # Preparación de datos, Inventario Maestro y Proveedores
+├── 03 Arquitectura.md                  # Definición de la arquitectura objetivo TO-BE
+├── 04 Implementacion_Infraestructura.md# Configuración de RG y Azure AI Foundry
+├── 05 BaseConocimiento.md              # Definición de FAQ y políticas operativas
+├── 06 ImplementacionBaseConocimiento.md# Indexación en Azure AI Search para RAG
+└── 07 Puesta en marcha.md              # Guía de implementación y despliegue del MVP en Laravel
+```
+
+---
+
+## 📈 Módulos Implementados en el MVP
+
+1. **Dashboard Operativo:** Indicadores clave de inventario, facturas registradas y compras del mes.
+2. **Gestión de Productos e Inventarios:** Registro de existencias con actualización en tiempo real por movimientos de entrada, salida y ajustes.
+3. **Catálogo de Proveedores:** Trazabilidad completa de productos y sus suministradores principales.
+4. **Módulo de Facturación Inteligente:** Carga de PDFs/JPGs con procesamiento OCR automático y validación humana.
+5. **Asistente Virtual (Texto y Voz):** Consultas conversacionales de stock, facturas y procedimientos.
+6. **Sistema de Auditoría:** Registro pormenorizado de eventos (`LOGIN`, `FACTURA_CARGADA`, `CONSULTA_IA`, etc.).
+
+---
+
+## 🔒 Auditoría y Seguridad
+* **SSL Encriptado:** Conexión segura a Azure Database for MySQL.
+* **Manejo de Secretos:** Configuración mediante Variables de Entorno en Azure App Service (nunca expuestas en Git).
+* **Supervisión Humana:** Ningún proceso de IA autoriza o guarda compras de forma autónoma sin la confirmación de un operador.
