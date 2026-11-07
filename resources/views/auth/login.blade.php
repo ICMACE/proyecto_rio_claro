@@ -31,7 +31,14 @@
                             class="form-control"
                             value="correo@mail.com"
                             required>
-
+                        <span class="text-muted">
+                            <small>correo@mail.com</small>
+                        </span>
+                        <span class="text-danger">
+                            @error('email')
+                                {{ $message }}
+                            @enderror
+                        </span>
                     </div>
 
                     <div class="form-group">
@@ -44,7 +51,14 @@
                             class="form-control"
                             value="root1234"
                             required>
-
+                        <span class="text-muted">
+                            <small>root1234</small>
+                        </span>
+                        <span class="text-danger">
+                            @error('password')
+                                {{ $message }}
+                            @enderror
+                        </span>
                     </div>
 
                     <button
