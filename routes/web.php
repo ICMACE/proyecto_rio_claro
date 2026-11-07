@@ -27,31 +27,31 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::prefix('proveedores')->group(function () {
+    //Route::prefix('proveedores')->group(function () {
         Route::resource('proveedores',ProveedorController::class);
-    });
-    Route::prefix('productos')->group(function () {
+    //});
+    //Route::prefix('productos')->group(function () {
         Route::resource('productos',ProductoController::class);
-        Route::get('/{producto}',[ProductoController::class, 'show'])->name('productos.show');
-    });
-    Route::prefix('facturas')->group(function () {
+        Route::get('/productos/{producto}',[ProductoController::class, 'show'])->name('productos.show');
+    //});
+    //Route::prefix('facturas')->group(function () {
         Route::resource('facturas',FacturaController::class);
-        Route::post('/confirmar',[FacturaController::class, 'confirmar'])->name('facturas.confirmar');
+        Route::post('/facturas/confirmar',[FacturaController::class, 'confirmar'])->name('facturas.confirmar');
 
-    });
-    Route::prefix('auditoria')->group(function () {
-        Route::get('/',[AuditoriaController::class, 'index'])->name('auditoria.index');
-    });
-    Route::prefix('movimientos')->group(function () {
+    //});
+    //Route::prefix('auditoria')->group(function () {
+        Route::get('/auditoria',[AuditoriaController::class, 'index'])->name('auditoria.index');
+    //});
+    //Route::prefix('movimientos')->group(function () {
         Route::resource('movimientos',MovimientoInventarioController::class);
         
-    });
-    Route::prefix('agente')->group(function () {
-        Route::get('/',[AgenteController::class,'index'])->name('agente.index');
-        Route::post('/preguntar',[AgenteController::class,'preguntar'])->name('agente.preguntar'); 
-        Route::get('/voz',[AgenteController::class, 'voz'])->name('agente.voz');
-        Route::post('/api',[AgenteController::class, 'preguntarApi'])->name('agente.api');
-    });
+    //});
+    //Route::prefix('agente')->group(function () {
+        Route::get('/agente',[AgenteController::class,'index'])->name('agente.index');
+        Route::post('/agente/preguntar',[AgenteController::class,'preguntar'])->name('agente.preguntar'); 
+        Route::get('/agente/voz',[AgenteController::class, 'voz'])->name('agente.voz');
+        Route::post('/agente/api',[AgenteController::class, 'preguntarApi'])->name('agente.api');
+    //});
 });
 
 require __DIR__.'/auth.php';
